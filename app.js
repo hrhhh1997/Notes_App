@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     let newItem = String(req.body.addItemTxt);
     newItem = newItem.trim();
-    console.log(newItem);
     if (newItem === '' || newItem === null) {
         res.redirect("/");
     } else {

@@ -19,7 +19,11 @@
                 <% listItems.forEach(item => { %>
                     <div class="item">
                         <h4 class="item-heading"><%=item.body.slice(0, 11)%></h4>
-                        <p><%=item.body.slice(0,81)%>  <a href="/todo/view">...</a></p>
+                       <% if (item.body.length >= 81) { %>
+                            <p><%=item.body.slice(0,81)%>  <a href="/todo/view">...</a></p>
+                       <% } else { %>
+                            <p><%=item.body%></p>
+                       <% } %>
                         <p class="item-date-created"><%=item.dateCreated%></p>
                         <hr>
                     </div>
