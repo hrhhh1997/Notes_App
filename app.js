@@ -16,10 +16,17 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
     let newItem = String(req.body.addItemTxt);
-    let itemDate = date.getDate();
-    let theItem = createItem.newItem(newItem, itemDate);
-    listItems.push(theItem);
-    res.redirect("/");
+    newItem = newItem.trim();
+    console.log(newItem);
+    if (newItem === '' || newItem === null) {
+        res.redirect("/");
+    } else {
+        let itemDate = date.getDate();
+        let theItem = createItem.newItem(newItem, itemDate);
+        listItems.push(theItem);
+        res.redirect("/");
+    }
+    
 });
 
 
