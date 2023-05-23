@@ -1,5 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: -webkit-linear-gradient(65deg, #526D82 50%, #DDE6ED 50%);
+    background: -webkit-linear-gradient(45deg, #526D82cc 50%, #DDE6EDcc 50%);
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 2%;
+    font-family: 'Montserrat';
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+.date-div {
+    background-color: #526D8266    /*a683e366*/;
+    width: clamp(40%, calc(5vw + 5%), 70%);
+    margin: auto;
+    padding: 2% 1%;
+    border-radius: 5px;
+    font-size: clamp(8px, calc(5vw + 6px), 28px);
+    font-weight: 500;
 }
