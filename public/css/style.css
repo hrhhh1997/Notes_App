@@ -36,6 +36,14 @@ h1 {
     color: #fff;
 }
 
+.item-date-created {
+    text-align: right;
+}
+
+.item {
+    text-align: left;
+}
+
 .items-div {
     max-height: 60vh;
     overflow: scroll;
@@ -43,6 +51,11 @@ h1 {
 
 .item:not(:last-child) {
     padding-bottom: 3%;
+}
+
+.item-heading {
+    text-align: left;
+    padding-bottom: 2%;
 }
 
 hr {
@@ -87,4 +100,8 @@ button {
 
 button:hover {
     background-color: #a683e3;
+}
+
+a {
+    text-decoration: none;
 }

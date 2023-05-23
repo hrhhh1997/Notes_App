@@ -1,7 +1,10 @@
+const date = require(__dirname + '/date.js');
+const createItem = require(__dirname + '/item.js');
+
 const express = require('express');
 const app = express();
 
-const listItems = [{title: "Lorem ipsum dolor sit amet", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "}, {title: "Duis aute irure dolor in", body: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}];
+const listItems = [];
 
 app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -10,6 +13,15 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
     res.render('todo', {listItems: listItems});
 });
+
+app.post("/", (req, res) => {
+    let newItem = String(req.body.addItemTxt);
+    let itemDate = date.getDate();
+    let theItem = createItem.newItem(newItem, itemDate);
+    listItems.push(theItem);
+    res.redirect("/");
+});
+
 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server started.");
