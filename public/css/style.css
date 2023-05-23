@@ -15,14 +15,76 @@ body {
 h1 {
     font-weight: 700;
     margin-bottom: 2%;
+    font-size: clamp(12px, calc(5vw + 6px), 36px);
+}
+
+.date-div, .main-items-div {
+    background-color: #526D8255;
+    width: clamp(40%, calc(5vw + 300px), 70%);
+    border-radius: 5px;
+    padding: 2% 2%;
 }
 
 .date-div {
-    background-color: #526D8266    /*a683e366*/;
-    width: clamp(40%, calc(5vw + 5%), 70%);
-    margin: auto;
-    padding: 2% 1%;
-    border-radius: 5px;
+    margin: auto auto 4% auto;
     font-size: clamp(8px, calc(5vw + 6px), 28px);
     font-weight: 500;
+}
+
+.main-items-div {
+    margin: auto auto 2% auto;
+    color: #fff;
+}
+
+.items-div {
+    max-height: 60vh;
+    overflow: scroll;
+}
+
+.item:not(:last-child) {
+    padding-bottom: 3%;
+}
+
+hr {
+    margin-top: 3%;
+}
+
+input[type=text] {
+    flex: 2;
+    outline: none;
+    border-style: none none solid none;
+    background-color: transparent;
+    border-color: #DDE6ED;
+    text-align: center;
+    padding: 1%;
+}
+
+form {
+    display: flex;
+    gap: 3%;
+}
+
+
+input[type=text]:focus {
+    background-color: #DDE6EDcc;
+    border-radius: 5px;
+}
+
+hr:last-child {
+    margin-bottom: 3%;
+}
+
+button {
+    flex: 1;
+    background-color: #526D82;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(16px, calc(10vw + 8px), 32px);
+}
+
+button:hover {
+    background-color: #a683e3;
 }

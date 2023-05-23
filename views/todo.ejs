@@ -14,8 +14,22 @@
     <body>
         <h1>To Do App</h1>
         <div class="date-div"></div>
-        <div class="items-div">
-
+        <div class="main-items-div">
+            <div class="items-div">
+                <% listItems.forEach(item => { %>
+                    <div class="item">
+                        <h3><%=item.title%></h3>
+                        <p><%=item.body%></p>
+                        <hr>
+                    </div>
+                    
+                <% }) %>
+            </div>
+            <form action="/" method="post">
+                <input type="text" name="addItemTxt" placeholder="Add Item...">
+                <button type="submit">+</button>
+            </form>
         </div>
+        <p>N.K.N.A.</p>
     </body>
 </html>
