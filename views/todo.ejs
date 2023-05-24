@@ -18,9 +18,9 @@
             <div class="items-div">
                 <% listItems.forEach(item => { %>
                     <div class="item">
-                        <h4 class="item-heading"><%=item.body.slice(0, 11)%></h4>
+                        <h4 class="item-heading"><%=item.title%></h4>
                        <% if (item.body.length >= 81) { %>
-                            <p><%=item.body.slice(0,81)%>  <a href="/todo/view">...</a></p>
+                            <p><%=item.body.slice(0,81)%>  <a href="/todo/view/<%=item.title%>">see more...</a></p>
                        <% } else { %>
                             <p><%=item.body%></p>
                        <% } %>

@@ -1,5 +1,6 @@
-function newItem(body, dateCreated) {
+function newItem(title, body, dateCreated) {
     return {
+        title,
         body,
         dateCreated,
     }
